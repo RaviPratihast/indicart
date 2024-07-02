@@ -1,6 +1,10 @@
-
+import { Header } from "./Component/component-index";
 const App = () => {
-  return <div className="text-3xl font-bold underline">App</div>;
+  return (
+    <>
+      <Header />
+    </>
+  );
 };
 
 export default App;
