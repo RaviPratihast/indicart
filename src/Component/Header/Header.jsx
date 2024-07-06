@@ -9,7 +9,7 @@ const Header = () => {
         {/* Navigation Links */}
 
         <nav className="hidden md:flex space-x-6">
-          <NavLink to="/product">Product</NavLink>
+          <NavLink to="/">Product</NavLink>
           <NavLink to="/wishlist">Wishlist</NavLink>
           <NavLink to="/cart">Cart</NavLink>
         </nav>
