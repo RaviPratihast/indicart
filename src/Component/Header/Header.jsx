@@ -1,28 +1,21 @@
 // import React from "react";
 
+import { NavLink } from "react-router-dom";
+
 const Header = () => {
   return (
-    <header className="bg-[#f8fafc] p-4 shadow-md">
+    <header className=" p-8 ml-16 mr-16">
       <div className="container mx-auto flex justify-between items-center">
         {/* Navigation Links */}
-        
-        <nav className="hidden md:flex space-x-6">
-          <a href="#products" className="text-slate-700 hover:text-gray-900">
-            Products
-          </a>
-          <a href="#wishlist" className="text-slate-700 hover:text-gray-900">
-            Wishlist
-          </a>
-          <a href="#cart" className="text-slate-700 hover:text-gray-900">
-            Cart
-          </a>
-        </nav>
 
+        <nav className="hidden md:flex space-x-6">
+          <NavLink to="/product">Product</NavLink>
+          <NavLink to="/wishlist">Wishlist</NavLink>
+          <NavLink to="/cart">Cart</NavLink>
+        </nav>
 
         {/* Logo */}
         <div className="text-[#020617] text-2xl font-bold">Indicart</div>
-
-
 
         {/* Search and Login */}
         <div className="hidden md:flex items-center space-x-4">
