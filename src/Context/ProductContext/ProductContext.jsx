@@ -1,37 +1,13 @@
-// import { createContext, useContext, useReducer } from "react";
-// import { products } from "../../data/data";
-// import { ProductReducer } from "../../Reducers/ProductReducer";
-
-// const ProductContext = createContext(null);
-// const useProduct = () => useContext(ProductContext);
-
-// let initialState = {
-//   originalProduct: products,
-//   initialProduct: products,
-//   wishlist: [],
-//   cart: [],
-// };
-
-// const ProductProvider = ({ children }) => {
-//   const [state, dispatch] = useReducer(ProductReducer, initialState);
-//   return (
-//     <ProductContext.Provider value={{ state, dispatch }}>
-//       {children}
-//     </ProductContext.Provider>
-//   );
-// };
-
-// export { ProductProvider, useProduct };
-
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useReducer } from "react";
+import PropTypes from "prop-types"; // Import PropTypes
 import { products } from "../../data/data"; // Ensure this path is correct
 import { ProductReducer } from "../../Reducers/ProductReducer"; // Ensure this path is correct
 
-// Create a context with an empty object as the default value
-const ProductContext = createContext({});
+// Create a context with null as the default value
+const ProductContext = createContext(null);
 
 // Custom hook to use the ProductContext
-const useProduct = () => useContext(ProductContext);
+// const useProduct = () => useContext(ProductContext);
 
 // Initial state
 const initialState = {
@@ -52,32 +28,9 @@ const ProductProvider = ({ children }) => {
   );
 };
 
-export { ProductProvider, useProduct };
+// Add prop-types validation
+ProductProvider.propTypes = {
+  children: PropTypes.node.isRequired, // Validate that children is required and is a node
+};
 
-// import { createContext, useContext, useReducer } from "react";
-// import videos from "../../Data/UserData";
-// import VideoReducer from "../../Reducers/VideoReducer";
-
-// const VideoContext = createContext(null);
-// const useVideo = () => useContext(VideoContext);
-
-// let initialState = {
-//   originalData: videos,
-//   initialVideo: videos,
-//   liked: [],
-//   watchLater: [],
-//   playlists: [],
-//   history: [],
-//   filteredVideos: videos,
-// };
-
-// const VideoProvider = ({ children }) => {
-//   const [state, dispatch] = useReducer(VideoReducer, initialState);
-//   return (
-//     <VideoContext.Provider value={{ state, dispatch }}>
-//       {children}
-//     </VideoContext.Provider>
-//   );
-// };
-
-// export { VideoProvider, useVideo };
+export { ProductProvider, ProductContext };
